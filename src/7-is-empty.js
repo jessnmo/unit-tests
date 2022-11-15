@@ -1,15 +1,10 @@
 export const isEmpty = (stringArrayOrObject) => {
 	const type = typeof stringArrayOrObject;
-
-	if (type === string) {
-		if (stringArrayOrObject === '') {
-			return true;
-		}
-	} else if (type === object) {
-		if (stringArrayOrObject === {}) return true;
-	} else if (type === {}) {
-		return true;
-	} else return false;
-	/* console.log(type);
-	return type.length === 0 ? true : false; */
+	if (type === 'string') {
+		return stringArrayOrObject === '' ? true : false;
+	} else if (type === 'object') {
+		return Object.keys(stringArrayOrObject).length === 0 ? true : false;
+	} else if ((type = 'array')) {
+		return stringArrayOrObject.length === 0 ? true : false;
+	}
 };
